@@ -7,7 +7,7 @@ import { PrimaryButton as PrimaryButtonBase } from "components/misc/Buttons.js";
 import { ReactComponent as UserIcon } from "feather-icons/dist/icons/user.svg";
 import { ReactComponent as TagIcon } from "feather-icons/dist/icons/tag.svg";
 import { ReactComponent as SvgDecoratorBlob1 } from "../../images/svg-decorator-blob-1.svg";
-import { ReactComponent as SvgDecoratorBlob2 } from "../../images/svg-decorator-blob-3.svg";
+//import { ReactComponent as SvgDecoratorBlob2 } from "../../images/svg-decorator-blob-3.svg";
 
 const Container = tw.div`relative`;
 const Content = tw.div`max-w-screen-xl mx-auto py-20 lg:py-24`;
@@ -41,9 +41,9 @@ const Link = styled(PrimaryButtonBase).attrs({as: "a"})`
 const DecoratorBlob1 = tw(
   SvgDecoratorBlob1
 )`-z-10 absolute bottom-0 right-0 w-48 h-48 transform translate-x-40 -translate-y-8 opacity-25`;
-const DecoratorBlob2 = tw(
-  SvgDecoratorBlob2
-)`-z-10 absolute top-0 left-0 w-48 h-48 transform -translate-x-32 translate-y-full opacity-25`;
+// const DecoratorBlob2 = tw(
+//   SvgDecoratorBlob2
+// )`-z-10 absolute top-0 left-0 w-48 h-48 transform -translate-x-32 translate-y-full opacity-25`;
 
 export default ({
   subheading = "Blog",
@@ -114,7 +114,7 @@ export default ({
         </ThreeColumn>
       </Content>
       <DecoratorBlob1 />
-      <DecoratorBlob2 />
+      
     </Container>
   );
 };

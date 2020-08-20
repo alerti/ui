@@ -55,8 +55,8 @@ export default () => {
                 </Column>
                 <Column>
                   <InputContainer tw="flex-1">
-                    <Label htmlFor="name-input">Your Message</Label>
-                    <TextArea id="message-input" name="message" placeholder="E.g. Details about your event"/>
+                    <Label htmlFor="name-input">Your Roles</Label>
+                    <TextArea id="name-input" name="message" placeholder="E.g. Details about your event"/>
                   </InputContainer>
                 </Column>
               </TwoColumn>

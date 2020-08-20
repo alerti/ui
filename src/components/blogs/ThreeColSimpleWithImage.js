@@ -3,7 +3,7 @@ import tw from "twin.macro";
 import styled from "styled-components";
 import { SectionHeading as HeadingTitle } from "../misc/Headings.js";
 import { ReactComponent as SvgDecoratorBlob1 } from "../../images/svg-decorator-blob-1.svg";
-import { ReactComponent as SvgDecoratorBlob2 } from "../../images/svg-decorator-blob-3.svg";
+//import { ReactComponent as SvgDecoratorBlob2 } from "../../images/svg-decorator-blob-3.svg";
 
 const Container = tw.div`relative`;
 const Content = tw.div`max-w-screen-xl mx-auto py-20 lg:py-24`;
@@ -25,9 +25,9 @@ const Link = tw.a`inline-block mt-2 text-sm text-primary-500 font-bold cursor-po
 const DecoratorBlob1 = tw(
   SvgDecoratorBlob1
 )`-z-10 absolute bottom-0 right-0 w-48 h-48 transform translate-x-40 -translate-y-8 opacity-25`;
-const DecoratorBlob2 = tw(
-  SvgDecoratorBlob2
-)`-z-10 absolute top-0 left-0 w-48 h-48 transform -translate-x-32 translate-y-full opacity-25`;
+// const DecoratorBlob2 = tw(
+//   SvgDecoratorBlob2
+// )`-z-10 absolute top-0 left-0 w-48 h-48 transform -translate-x-32 translate-y-full opacity-25`;
 
 export default () => {
   const blogPosts = [
@@ -74,7 +74,7 @@ export default () => {
         </ThreeColumn>
       </Content>
       <DecoratorBlob1 />
-      <DecoratorBlob2 />
+      
     </Container>
   );
 };

@@ -108,30 +108,31 @@ import ComponentRenderer from "ComponentRenderer.js";
 import MainLandingPage from "MainLandingPage.js";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import ContactUs from "pages/ContactUs";
+//import ContactUs from "pages/ContactUs";
 import Login from "pages/Login";
+import SignUp from "pages/Signup";
 
 export default function App() {
   // return <AnimationRevealPage disabled></AnimationRevealPage>;
   return (
     <Router>
       <Switch>
-        <Route path="/components/:type/:subtype/:name">
+        <Route exact path="/components/:type/:subtype/:name">
           <ComponentRenderer />
         </Route>
-        <Route path="/components/:type/:name">
+        <Route ecxact path="/components/:type/:name">
           <ComponentRenderer />
         </Route>
-        <Route path="/">
+        <Route exact path="/">
           <MainLandingPage />
         </Route>
-        <Route path="/pages/signup">
-          <ContactUs />
+        <Route exact path="/pages/signup">
+          <SignUp />
         </Route>
-        <Route path="/pages/AboutUs">
+        <Route exact path="/pages/aboutus">
           <AboutUs />
         </Route>
-        <Route path="/pages/login">
+        <Route exact path="/pages/login">
           <Login />
         </Route>
       </Switch>

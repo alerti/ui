@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import ReactDOM from "react-dom";
+
 //import { Rnd } from "react-rnd";
 //import { motion } from "framer-motion";
-import DehazeIcon from "@material-ui/icons/Dehaze";
-import "./MainLandingpage.css"
+//import DehazeIcon from "@material-ui/icons/Dehaze";
+import "./MainLandingpage.css";
 
 import HomeFooter from "components/footers/homeFooter";
-
+//import login from "pages/Login";
+import {Link} from "react-router-dom";
 
 
 import { components } from "ComponentRenderer.js";
@@ -24,18 +25,22 @@ import { LogoLink } from "components/headers/light.js";
 import { SectionHeading as HeadingBase } from "components/misc/Headings";
 import { SectionDescription as DescriptionBase } from "components/misc/Typography";
 import { PrimaryButton as PrimaryButtonBase } from "components/misc/Buttons.js";
-import NiceSvg from "images/svg-decorator-blob-3.svg";
+import NiceSvg from "images/svgs/team.svg";
+import NiceSvg1 from "images/svgs/data.svg";
+//import NiceSvg2 from "images/svgs/finance.svg";
+import NiceSvg3 from "images/svgs/invest.svg";
 import TimelineIcon from '@material-ui/icons/Timeline';
 
 import { ReactComponent as CheckboxIcon } from "feather-icons/dist/icons/check-circle.svg";
 
-import PhoneNav from "./components/PhoneNav/PhoneNav";
+//import PhoneNav from "./components/PhoneNav/PhoneNav";
+import Login from "./pages/Login";
+//import  Widget from "./components/features/widget";
 
-import heroScreenshotImageSrc from "images/demo/imge.svg";
-import logo from "images/logo.svg";
+//import logo from "images/logo.svg";
 import logo1 from "images/logo.png";
-import useInView from "use-in-view";
-import Demo from "./components/PhoneNav/siDenav"
+//import useInView from "use-in-view";
+//import Demo from "./components/PhoneNav/siDenav";
 
 
 /* Hero */
@@ -45,39 +50,40 @@ const NavRow = tw(Row)`flex flex-col sm:flex-row items-center justify-between`;
 
 const HeroRow = tw(
   Row
-)`flex-col lg:flex-row justify-between items-center py-20 lg:py-24 max-w-screen-2xl mx-auto`;
+)`flex-col lg:flex-row justify-between items-center py-20 lg:py-24 max-w-screen-2xl mx-auto sm:border-solid`;
 
 const Column = tw.div``;
 const TextColumn = tw(
   Column
-)`mx-auto lg:mr-0 max-w-2xl lg:max-w-xl xl:max-w-2xl flex-shrink-0`;
+)`mx-auto lg:mr-0 max-w-2xl lg:max-w-xl sm:flex-no-wrap xl:max-w-2xl flex-shrink-0`;
 const Heading = tw(
   HeadingBase
-)`text-center lg:text-left text-primary-400 leading-snug`;
+)`text-center lg:text-left text-green-400 leading-snug`;
 const Description = tw(
   DescriptionBase
-)`mt-4 text-center lg:text-left lg:text-base text-gray-700 max-w-lg mx-auto lg:mx-0`;
+)`mt-4 text-center lg:text-left lg:text-lg  sm:antialiased sm:text-3xl flex text-gray-700 max-w-lg mx-auto lg:mx-0`;
 const Actions = tw.div`flex flex-col sm:flex-row justify-center lg:justify-start`;
 const ActionButton = tw(
   AnchorLink
 )`px-8 py-3 font-bold rounded bg-primary-500 text-gray-100 hocus:bg-primary-700 hocus:text-gray-200 focus:shadow-outline focus:outline-none transition duration-300 mt-12 inline-block tracking-wide text-center px-10 py-4 font-semibold tracking-normal`;
-const PrimaryButton = tw(ActionButton)``;
+const PrimaryButton = tw(ActionButton)`bg-green-500 sm:shadow-xl sm:w-1/2`;
 const SecondaryButton = tw(
   ActionButton
-)`mt-6 sm:mt-12 sm:ml-8 bg-gray-300 text-gray-800 hocus:bg-gray-400 hocus:text-gray-900`;
+)`mt-6 sm:mt-12 sm:ml-8 bg-gray-300 text-gray-800 hocus:bg-gray-400 hocus:text-gray-900  sm:w-1/2`;
 const FeatureList = tw.ul`mt-6 leading-loose flex flex-wrap max-w-xl mx-auto lg:mx-0`;
 const Feature = tw.li`mt-2 flex items-center flex-shrink-0 w-full sm:w-1/2 justify-center lg:justify-start`;
 const FeatureIcon = tw(CheckboxIcon)`w-5 h-5 text-primary-500`;
 const FeatureText = tw.p`ml-2 font-medium text-gray-700`;
 const ImageColumn = tw(Column)`mx-auto lg:mr-0 relative mt-16 lg:mt-0 lg:ml-8`;
-const ImageContainer = tw.div``;
+const ImageContainer = tw.div`mr-4`;
 const Image = tw.img`max-w-full rounded-t sm:rounded`;
 
 const SectionContainer = tw(ContentWithVerticalPadding)``;
-const SectionHeading = tw(HeadingBase)`text-primary-900`;
+const SectionHeading = tw(HeadingBase)`text-green-600`;
 const SectionDescription = tw(
   DescriptionBase
 )`text-center mx-auto text-gray-600 max-w-4xl`;
+
 
 //const PreviewCard = tw(motion.a)`block rounded-lg shadow-raised`;
 //const PreviewCardImageContainer = tw.div`rounded-t-lg border-0 border-b-0`;
@@ -90,8 +96,8 @@ const SectionDescription = tw(
 //)`w-full rounded-b-lg rounded-t-none py-5 font-semibold`;
 
 //const ComponentsContainer = tw.div`mt-24`;
-const ComponentsType = tw.h3`text-4xl font-black text-primary-500 border-b-4 border-primary-500 inline-block`;
-const Components = tw.div``;
+// const ComponentsType = tw.h3`text-4xl font-black text-primary-500 border-b-4 border-primary-500 inline-block`;
+// const Components = tw.div``;
 //const Component = tw.div`mt-12 border rounded-lg bg-white`;
 //const ComponentHeading = tw.div`px-8 py-5 border-b flex flex-col sm:flex-row justify-between items-center`;
 //const ComponentName = tw.h6`text-lg`;
@@ -117,22 +123,22 @@ export default ({
   innerPages = components.innerPages,
   blocks = components.blocks
 }) => {
-  const previewImageAnimationVariants = {
-    rest: {
-      backgroundPositionY: "0%",
-    },
-    hover: {
-      backgroundPositionY: "100%",
-      transition: { type: "tween", ease: "linear", duration: 5 },
-    }
-  };
+  // const previewImageAnimationVariants = {
+  //   rest: {
+  //     backgroundPositionY: "0%",
+  //   },
+  //   hover: {
+  //     backgroundPositionY: "100%",
+  //     transition: { type: "tween", ease: "linear", duration: 5 },
+  //   }
+  // };
 
   const noOfLandingPages = Object.keys(landingPages).length;
-  const noOfInnerPages = Object.keys(innerPages).length;
-  const noOfComponentBlocks = Object.values(blocks).reduce(
-    (acc, block) => acc + Object.keys(block.elements).length,
-    0
-  );
+ // const noOfInnerPages = Object.keys(innerPages).length;
+  //const noOfComponentBlocks = Object.values(blocks).reduce(
+  //   (acc, block) => acc + Object.keys(block.elements).length,
+  //   0
+  // );
 
   features = features || [
     ` Earn`,
@@ -140,35 +146,31 @@ export default ({
     `Be secure`,
    
   ];
-  const Search = () => {
-    const [showResults, setShowResults] = React.useState(false)
-    const onClick = () => setShowResults(true);
-    const Close = () => showResults(false);
+ const Search = () => {
+    //const [showResults, setShowResults] = React.useState(false)
+    //const onClick = () => setShowResults(true);
+    //const Close = () => showResults(false);
     return (
-   
-        <PrimaryButtonBase onClick={onClick}>Login Or Signup
-        { showResults ? <PhoneNav
-        onClick={Close}
-         />: null }
-          
-       
-       
+      <Link to="/pages/Login">
+       <PrimaryButtonBase>
+        
+       Login Or Signup
         </PrimaryButtonBase>
+        </Link>
+       
     );
    
   }
 
-  const [clicked,setclicked]= useState(false);
 
 
 
 
 
-
-
-//end nav
+//end navsvg-decorator-blob-3
   return (
     <div>
+   
  
    <AnimationRevealPage disabled>
       <Container tw="bg-gray-100 -mx-8 -mt-8 pt-8 px-8">
@@ -186,12 +188,10 @@ export default ({
 
           <HeroRow>
             <TextColumn>
-              <Heading>INVEST AND EARN, SAFE WHILE AT HOME  <TimelineIcon color="sucess" fontSize="large" />
+           
+              <Heading> INVEST AND EARN, SAFE WHILE AT HOME<TimelineIcon color="sucess" fontSize="large" />
+              
               </Heading>
-              <ImageColumn>
-              <ImageContainer>
-                 </ImageContainer>
-              </ImageColumn>
               <Description>
               Get investing insight from the top league forex traders in Africa. They do the analysis, you trade. Get exclusive webinar interviews from such traders and investors. Get to know how they do it as we prepare for our official launch. Get invite to our community
                 
@@ -206,9 +206,10 @@ export default ({
                 ))}
               </FeatureList>
               <Actions>
+              <Link to=<Login/>>
                 <PrimaryButton href={promourl3} css={buttonRoundedCss}>
                   {promourl3}
-                </PrimaryButton>
+                </PrimaryButton></Link>
                 <SecondaryButton href={secondaryButtonUrl}>
                   {primourl1}
                 </SecondaryButton>
@@ -216,7 +217,7 @@ export default ({
             </TextColumn>
             <ImageColumn>
               <ImageContainer>
-                <Image src={heroScreenshotImageSrc} />
+                <Image src={NiceSvg} />
               </ImageContainer>
             </ImageColumn>
           </HeroRow>
@@ -224,9 +225,11 @@ export default ({
 
           <HeroRow>
           <ImageColumn>
+              
               <ImageContainer>
-                <Image src={NiceSvg} />
-              </ImageContainer>
+                <Image src={NiceSvg1} />
+                </ImageContainer>
+          
             </ImageColumn>
             <TextColumn>
               <Heading>Earn <TimelineIcon color="sucess" fontSize="large" />
@@ -280,7 +283,7 @@ export default ({
             </TextColumn>
             <ImageColumn>
               <ImageContainer>
-                <Image src={heroScreenshotImageSrc} />
+                <Image src={NiceSvg3} />
               </ImageContainer>
             </ImageColumn>
           </HeroRow>
@@ -311,39 +314,39 @@ export default ({
   );
 };
 
-const BlocksRenderer = ({ blocks }) => {
-  const [lastVisibleBlockIndex, setLastVisibleBlockIndex] = useState(0);
+// const BlocksRenderer = ({ blocks }) => {
+//   const [lastVisibleBlockIndex, setLastVisibleBlockIndex] = useState(0);
 
-  const updateLastVisibleBlockIndex = (index) => {
-    console.log("LAST WAS ", lastVisibleBlockIndex);
-    if (index > lastVisibleBlockIndex) setLastVisibleBlockIndex(index);
-  };
+//   const updateLastVisibleBlockIndex = (index) => {
+//     console.log("LAST WAS ", lastVisibleBlockIndex);
+//     if (index > lastVisibleBlockIndex) setLastVisibleBlockIndex(index);
+//   };
 
-  return <div></div>;
-};
+//   return <div></div>;
+// };
 
-const Block = ({ notifyIsVisible, components }) => {
-  const offset = 30;
-  const [ref, inView] = useInView(offset);
+// const Block = ({ notifyIsVisible, components }) => {
+//   const offset = 30;
+//   const [ref, inView] = useInView(offset);
 
-  useEffect(() => {
-    if (inView) notifyIsVisible();
-  }, [inView, notifyIsVisible]);
+//   useEffect(() => {
+//     if (inView) notifyIsVisible();
+//   }, [inView, notifyIsVisible]);
 
-  //const ResizeHandle = <div></div>;
+//   //const ResizeHandle = <div></div>;
 
  // const componentBlockRefs = {};
 
-  const updateComponentBlockIframeHeight = (iframe) => {
-    iframe.style.height = "auto";
-    iframe.style.height =
-      iframe.contentWindow.document.body.scrollHeight + "px";
-  };
+//   const updateComponentBlockIframeHeight = (iframe) => {
+//     iframe.style.height = "auto";
+//     iframe.style.height =
+//       iframe.contentWindow.document.body.scrollHeight + "px";
+//   };
 
-  return (
-    <div ref={ref} tw="mt-32">
-      <ComponentsType>{components.type}</ComponentsType>
-      <Components></Components>
-    </div>
-  );
-};
+//   return (
+//     <div ref={ref} tw="mt-32">
+//       <ComponentsType>{components.type}</ComponentsType>
+//       <Components></Components>
+//     </div>
+//   );
+// };
