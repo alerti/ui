@@ -14,7 +14,7 @@ import {Link} from "react-router-dom";
 const Container = tw(ContainerBase)`min-h-0  text-white font-medium flex  justify-center -m-1`;
 const Content = tw.div`max-w-screen-xl m-0 sm:mx-1 sm:my-1 bg-pink-100 text-gray-900 shadow sm:rounded-lg flex justify-center flex-1 `;
 const MainContainer = tw.div`lg:w-1/2 xl:w-5/12 p-6 sm:p-12`;
-const LogoLink = tw.a``;
+//const LogoLink = tw.a``;
 const LogoImage = tw.img`h-12 mx-auto`;
 const MainContent = tw.div`mt-12 flex flex-col items-center`;
 const Heading = tw.h1`text-2xl xl:text-3xl font-extrabold`;
@@ -80,9 +80,9 @@ export default ({
     <Container>
       <Content>
         <MainContainer>
-          <LogoLink href={logoLinkUrl}>
+          <Link to="/">
             <LogoImage src={logo} />
-          </LogoLink>
+          </Link>
           <MainContent>
             <Heading>{headingText}</Heading>
             <FormContainer>
