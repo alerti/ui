@@ -11,8 +11,8 @@ import googleIconImageSrc from "images/google-icon.png";
 import twitterIconImageSrc from "images/twitter-icon.png";
 import { ReactComponent as SignUpIcon } from "feather-icons/dist/icons/user-plus.svg";
 
-const Container = tw(ContainerBase)`max-h-full bg-gray-100 text-white font-medium sm:grid-cols-1 flex justify-center -m-1 max-h-full`;
-const Content = tw.div`max-w-screen-xl m-0 sm:mx-1  sm:w-full sm:flex sm:my-1 bg-gray-100 text-gray-900 shadow sm:rounded-lg flex justify-center flex-1`;
+const Container = tw(ContainerBase)`max-h-full bg-gray-100 text-white font-medium sm:grid-cols-1 flex justify-center -m-1 max-h-full w-full`;
+const Content = tw.div`max-w-screen-xl m-0 sm:mx-1  sm:w-full sm:flex sm:my-1 bg-gray-100 text-gray-900 shadow sm:rounded-lg flex justify-center flex-1 `;
 const MainContainer = tw.div`lg:w-1/2 xl:w-5/12 p-6 sm:p-12`;
 //const LogoLink = tw.a``;
 const LogoImage = tw.img`h-12 mx-auto`;
@@ -73,8 +73,7 @@ export default ({
   submitButtonText = "Sign Up",
   SubmitButtonIcon = SignUpIcon,
   tosUrl = "#",
-  privacyPolicyUrl = "#",
-  signInUrl = "#"
+ 
 }) => (
   <AnimationRevealPage>
     <Container>

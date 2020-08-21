@@ -31,6 +31,7 @@ import NiceSvg1 from "images/svgs/data.svg";
 import NiceSvg3 from "images/svgs/invest.svg";
 import TimelineIcon from '@material-ui/icons/Timeline';
 
+
 import { ReactComponent as CheckboxIcon } from "feather-icons/dist/icons/check-circle.svg";
 
 //import PhoneNav from "./components/PhoneNav/PhoneNav";
@@ -58,32 +59,35 @@ const TextColumn = tw(
 )`mx-auto lg:mr-0 max-w-2xl lg:max-w-xl sm:flex-no-wrap xl:max-w-2xl flex-shrink-0`;
 const Heading = tw(
   HeadingBase
-)`text-center lg:text-left text-green-400 leading-snug`;
+)`text-center lg:text-left text-green-700 leading-snug mt-6 lg:text-sm md:text-base lg:mx-12`;
 const Description = tw(
   DescriptionBase
-)`mt-4 text-center lg:text-left lg:text-lg  sm:antialiased sm:text-3xl flex text-gray-700 max-w-lg mx-auto lg:mx-0`;
+)`mt-4 text-center lg:text-left lg:text-lg  sm:antialiased sm:text-3xl border p-2 shadow-sm flex text-gray-700 max-w-lg mx-auto lg:mx-0`;
 const Actions = tw.div`flex flex-col sm:flex-row justify-center lg:justify-start`;
 const ActionButton = tw(
   AnchorLink
 )`px-8 py-3 font-bold rounded bg-primary-500 text-gray-100 hocus:bg-primary-700 hocus:text-gray-200 focus:shadow-outline focus:outline-none transition duration-300 mt-12 inline-block tracking-wide text-center px-10 py-4 font-semibold tracking-normal`;
-const PrimaryButton = tw(ActionButton)`bg-green-500 sm:shadow-xl sm:float-right `;
+const PrimaryButton = tw(ActionButton)`bg-green-500 sm:shadow-xl shadow sm:float-right `;
 const SecondaryButton = tw(
   ActionButton
-)`mt-6 sm:mt-12 sm:ml-8 bg-gray-300 text-gray-800 hocus:bg-gray-400 hocus:text-gray-900  `;
+)`mt-6 sm:mt-12 sm:ml-8 bg-gray-300 text-gray-800 hocus:bg-gray-400 shadow hocus:text-gray-900  `;
 const FeatureList = tw.ul`mt-6 leading-loose flex flex-wrap max-w-xl mx-auto lg:mx-0`;
-const Feature = tw.li`mt-2 flex items-center flex-shrink-0 w-full sm:w-1/2 justify-center lg:justify-start`;
-const FeatureIcon = tw(CheckboxIcon)`w-5 h-5 text-primary-500`;
-const FeatureText = tw.p`ml-2 font-medium text-gray-700`;
+const Feature = tw.li`mr-4  mb-4 flex items-center flex-shrink-0 w-full  p-2    sm:w-1/3 justify-center lg:justify-start`;
+const FeatureIcon = tw(CheckboxIcon)`w-8 h-8  text-green-900`;
+const FeatureText = tw.p`ml-8 text-xl font-medium  text-gray-700`;
 const ImageColumn = tw(Column)`mx-auto lg:mr-0 relative mt-16 lg:mt-0 lg:ml-8`;
 const ImageContainer = tw.div`mr-4`;
-const Image = tw.img`max-w-full rounded-t sm:rounded`;
+const Image = tw.img`max-w-full rounded-t p-4  sm:rounded`;
 
 const SectionContainer = tw(ContentWithVerticalPadding)``;
-const SectionHeading = tw(HeadingBase)`text-green-600`;
+const SectionHeading = tw(HeadingBase)`text-green-600 text-sm lg:text-xs`;
 const SectionDescription = tw(
   DescriptionBase
-)`text-center mx-auto text-gray-600 max-w-4xl`;
+)`text-center mx-auto text-gray-600 max-w-4xl border p-2`;
 const MainloginPage= tw(PrimaryButtonBase)`float-right mt--8`;
+const LogoImage = tw.img` `;
+
+
 //const PreviewCard = tw(motion.a)`block rounded-lg shadow-raised`;
 //const PreviewCardImageContainer = tw.div`rounded-t-lg border-0 border-b-0`;
 //const PreviewCardImage = styled(motion.div)`
@@ -174,7 +178,7 @@ export default ({
         <Content2Xl>
           <NavRow>
             <LogoLink href="/">
-              <img src={logo1} alt="" />
+              <LogoImage src={logo1} alt="" />
              
             </LogoLink>
            
@@ -185,7 +189,7 @@ export default ({
           <HeroRow>
             <TextColumn>
            
-              <Heading> INVEST AND EARN, SAFE WHILE AT HOME<TimelineIcon color="sucess" fontSize="large" />
+              <Heading> INVEST AND EARN, SAFE WHILE AT HOME
               
               </Heading>
               <Description>
@@ -196,7 +200,7 @@ export default ({
               <FeatureList>
                 {features.map((feature, index) => (
                   <Feature key={index}>
-                    <FeatureIcon />
+                    <TimelineIcon />
                     <FeatureText>{feature}</FeatureText>
                   </Feature>
                 ))}
@@ -217,23 +221,15 @@ export default ({
               </ImageContainer>
             </ImageColumn>
           </HeroRow>
-
-
-          <HeroRow>
+         <HeroRow>
           <ImageColumn>
-              
               <ImageContainer>
                 <Image src={NiceSvg1} />
                 </ImageContainer>
-          
             </ImageColumn>
             <TextColumn>
-              <Heading>Earn <TimelineIcon color="sucess" fontSize="large" />
+              <Heading>Earn 
               </Heading>
-              <ImageColumn>
-                <ImageContainer>
-                </ImageContainer>
-              </ImageColumn>
               <Description>
              They do the analysis, you trade. Get exclusive webinar interviews from such traders and investors. 
               </Description>
@@ -253,13 +249,11 @@ export default ({
                   {secondaryButtonText}
                 </SecondaryButton>
               </Actions>
-            </TextColumn>
-            
+            </TextColumn>  
           </HeroRow>
-
           <HeroRow>
             <TextColumn>
-              <Heading> Safe trading <TimelineIcon color="sucess" fontSize="large" />
+              <Heading> Safe trading 
               </Heading>
               <ImageColumn>
             <ImageContainer>

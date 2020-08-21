@@ -112,6 +112,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from "pages/Login";
 import SignUp from "pages/Signup";
 
+
 export default function App() {
   // return <AnimationRevealPage disabled></AnimationRevealPage>;
   return (
