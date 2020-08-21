@@ -34,7 +34,7 @@ import TimelineIcon from '@material-ui/icons/Timeline';
 import { ReactComponent as CheckboxIcon } from "feather-icons/dist/icons/check-circle.svg";
 
 //import PhoneNav from "./components/PhoneNav/PhoneNav";
-import Login from "./pages/Login";
+//import Login from "./pages/Login";
 //import  Widget from "./components/features/widget";
 
 //import logo from "images/logo.svg";
@@ -45,7 +45,7 @@ import logo1 from "images/logo.png";
 
 /* Hero */
 const Row = tw.div`flex`;
-const NavRow = tw(Row)`flex flex-col sm:flex-row items-center justify-between`;
+const NavRow = tw(Row)`flex flex-col sm:flex sm:justify-start justify-center  justify-between`;
 
 
 const HeroRow = tw(
@@ -66,10 +66,10 @@ const Actions = tw.div`flex flex-col sm:flex-row justify-center lg:justify-start
 const ActionButton = tw(
   AnchorLink
 )`px-8 py-3 font-bold rounded bg-primary-500 text-gray-100 hocus:bg-primary-700 hocus:text-gray-200 focus:shadow-outline focus:outline-none transition duration-300 mt-12 inline-block tracking-wide text-center px-10 py-4 font-semibold tracking-normal`;
-const PrimaryButton = tw(ActionButton)`bg-green-500 sm:shadow-xl sm:w-1/2`;
+const PrimaryButton = tw(ActionButton)`bg-green-500 sm:shadow-xl sm:float-right `;
 const SecondaryButton = tw(
   ActionButton
-)`mt-6 sm:mt-12 sm:ml-8 bg-gray-300 text-gray-800 hocus:bg-gray-400 hocus:text-gray-900  sm:w-1/2`;
+)`mt-6 sm:mt-12 sm:ml-8 bg-gray-300 text-gray-800 hocus:bg-gray-400 hocus:text-gray-900  `;
 const FeatureList = tw.ul`mt-6 leading-loose flex flex-wrap max-w-xl mx-auto lg:mx-0`;
 const Feature = tw.li`mt-2 flex items-center flex-shrink-0 w-full sm:w-1/2 justify-center lg:justify-start`;
 const FeatureIcon = tw(CheckboxIcon)`w-5 h-5 text-primary-500`;
@@ -83,8 +83,7 @@ const SectionHeading = tw(HeadingBase)`text-green-600`;
 const SectionDescription = tw(
   DescriptionBase
 )`text-center mx-auto text-gray-600 max-w-4xl`;
-
-
+const MainloginPage= tw(PrimaryButtonBase)`float-right mt--8`;
 //const PreviewCard = tw(motion.a)`block rounded-lg shadow-raised`;
 //const PreviewCardImageContainer = tw.div`rounded-t-lg border-0 border-b-0`;
 //const PreviewCardImage = styled(motion.div)`
@@ -152,17 +151,15 @@ export default ({
     //const Close = () => showResults(false);
     return (
       <Link to="/pages/Login">
-       <PrimaryButtonBase>
+       <MainloginPage>
         
        Login Or Signup
-        </PrimaryButtonBase>
+        </MainloginPage>
         </Link>
        
     );
    
   }
-
-
 
 
 
@@ -181,11 +178,10 @@ export default ({
              
             </LogoLink>
            
+            
             <Search />
-          
          
           </NavRow>
-
           <HeroRow>
             <TextColumn>
            
@@ -206,12 +202,12 @@ export default ({
                 ))}
               </FeatureList>
               <Actions>
-              <Link to=<Login/>>
-                <PrimaryButton href={promourl3} css={buttonRoundedCss}>
-                  {promourl3}
-                </PrimaryButton></Link>
+              
+                <PrimaryButton>
+                <Link to="/pages/Login"> {promourl3}</Link>
+                </PrimaryButton>
                 <SecondaryButton href={secondaryButtonUrl}>
-                  {primourl1}
+                 <Link to="/pages/Signup" >{primourl1}</Link>
                 </SecondaryButton>
               </Actions>
             </TextColumn>
