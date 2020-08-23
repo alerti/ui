@@ -25,10 +25,10 @@ import { LogoLink } from "components/headers/light.js";
 import { SectionHeading as HeadingBase } from "components/misc/Headings";
 import { SectionDescription as DescriptionBase } from "components/misc/Typography";
 import { PrimaryButton as PrimaryButtonBase } from "components/misc/Buttons.js";
-import NiceSvg from "images/svgs/team.svg";
-import NiceSvg1 from "images/svgs/data.svg";
+import NiceSvg from "images/svgs/theme.svg";
+import NiceSvg1 from "images/svgs/dt-mobile.png";
 //import NiceSvg2 from "images/svgs/finance.svg";
-import NiceSvg3 from "images/svgs/invest.svg";
+import NiceSvg3 from "images/svgs/flow.svg";
 import TimelineIcon from '@material-ui/icons/Timeline';
 
 
@@ -77,7 +77,7 @@ const FeatureIcon = tw(CheckboxIcon)`w-8 h-8  text-green-900`;
 const FeatureText = tw.p`ml-8 text-xl font-medium  text-gray-700`;
 const ImageColumn = tw(Column)`mx-auto lg:mr-0 relative mt-16 lg:mt-0 lg:ml-8`;
 const ImageContainer = tw.div`mr-4`;
-const Image = tw.img`max-w-full rounded-t p-4  sm:rounded`;
+const Image = tw.img`max-w-full rounded-t p-4  sm:rounded `;
 
 const SectionContainer = tw(ContentWithVerticalPadding)``;
 const SectionHeading = tw(HeadingBase)`text-green-600 text-sm lg:text-xs`;
@@ -86,7 +86,6 @@ const SectionDescription = tw(
 )`text-center mx-auto text-gray-600 max-w-4xl border p-2`;
 const MainloginPage= tw(PrimaryButtonBase)`float-right mt--8`;
 const LogoImage = tw.img` `;
-
 
 //const PreviewCard = tw(motion.a)`block rounded-lg shadow-raised`;
 //const PreviewCardImageContainer = tw.div`rounded-t-lg border-0 border-b-0`;
@@ -167,7 +166,6 @@ export default ({
 
 
 
-
 //end navsvg-decorator-blob-3
   return (
     <div>
@@ -179,10 +177,10 @@ export default ({
           <NavRow>
             <LogoLink href="/">
               <LogoImage src={logo1} alt="" />
-             
+              
             </LogoLink>
            
-            
+            <lick/>
             <Search />
          
           </NavRow>
