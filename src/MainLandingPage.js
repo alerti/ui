@@ -135,12 +135,7 @@ export default ({
   //   }
   // };
 
-  const noOfLandingPages = Object.keys(landingPages).length;
- // const noOfInnerPages = Object.keys(innerPages).length;
-  //const noOfComponentBlocks = Object.values(blocks).reduce(
-  //   (acc, block) => acc + Object.keys(block.elements).length,
-  //   0
-  // );
+
 
   features = features || [
     ` Earn`,
@@ -156,7 +151,7 @@ export default ({
       <Link to="/pages/Login">
        <MainloginPage>
         
-       Login Or Signup
+       Login 
         </MainloginPage>
         </Link>
        
@@ -280,14 +275,10 @@ export default ({
 
           <SectionContainer id="landingPageDemos">
             <SectionHeading>
-              Elit cillum anim sint cillum ut nisi excepteur minim ipsum non.
+             About us
             </SectionHeading>
             <SectionDescription>
-              Lorem50 {noOfLandingPages}Dolor laboris pariatur laborum commodo.
-              Id quis ad tempor quis labore dolor anim. Velit aliquip magna
-              labore qui ex sint pariatur laborum dolore magna incididunt
-              pariatur ea occaecat. Reprehenderit anim nulla commodo consequat
-              irure veniam occaecat. Quis dolor nulla nostrud id.
+             We are a company which changes the whole notion of the signals inustry, please login or sinup to view our services.
             </SectionDescription>
           </SectionContainer>
         </Content2Xl>
